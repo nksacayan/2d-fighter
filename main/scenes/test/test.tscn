@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3r14xx4dc0"]
+
+[ext_resource type="PackedScene" uid="uid://burq8ee6rshq6" path="res://main/characters/test/testCharacter.tscn" id="2_2p637"]
+[ext_resource type="Texture2D" uid="uid://bklk1qjaalru5" path="res://icon.svg" id="2_pjn3i"]
+[ext_resource type="Texture2D" uid="uid://b2hh2x1htf7xt" path="res://main/scenes/test/game_background_4.png" id="2_qmtpk"]
+
+[sub_resource type="SGRectangleShape2D" id="SGRectangleShape2D_qmtpk"]
+extents_x = 4198579
+extents_y = 4186235
+
+[node name="Test" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 544)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qmtpk")
+
+[node name="TestCharacter" parent="." instance=ExtResource("2_2p637")]
+position = Vector2(824, 328)
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="SGStaticBody2D" type="SGStaticBody2D" parent="Level"]
+position = Vector2(960, 1016)
+scale = Vector2(14.9091, 0.998373)
+metadata/_edit_group_ = true
+
+[node name="SGCollisionShape2D" type="SGCollisionShape2D" parent="Level/SGStaticBody2D"]
+shape = SubResource("SGRectangleShape2D_qmtpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/SGStaticBody2D"]
+texture = ExtResource("2_pjn3i")

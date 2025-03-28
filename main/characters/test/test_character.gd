@@ -1,0 +1,1 @@
+extends SGCharacterBody2D

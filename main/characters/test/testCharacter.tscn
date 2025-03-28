@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://burq8ee6rshq6"]
+
+[ext_resource type="Script" uid="uid://cqhvuff3evmfo" path="res://main/characters/test/test_character.gd" id="1_15kck"]
+[ext_resource type="Texture2D" uid="uid://bklk1qjaalru5" path="res://icon.svg" id="1_elcwq"]
+
+[sub_resource type="SGRectangleShape2D" id="SGRectangleShape2D_15kck"]
+extents_x = 4206874
+extents_y = 4188865
+
+[node name="TestCharacter" type="SGCharacterBody2D"]
+script = ExtResource("1_15kck")
+
+[node name="SGCollisionShape2D" type="SGCollisionShape2D" parent="."]
+shape = SubResource("SGRectangleShape2D_15kck")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_elcwq")
